@@ -129,17 +129,15 @@ public class MainWindow  extends JFrame{
         });
 
 
+
+
+
         showConsignmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
+                ConsgnmentShelf csmShef = new ConsgnmentShelf(MainWindow.this);
             }
         });
-
-
-
-
     }
 
 

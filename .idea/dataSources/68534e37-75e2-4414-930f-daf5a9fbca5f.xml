@@ -58,9 +58,9 @@
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="18" name="quantity">
-      <Position>8</Position>
-      <DataType>int(11)|0</DataType>
+    <column id="26" parent="18" name="consgrName">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="27" parent="18" name="salePrx">
@@ -68,24 +68,24 @@
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="18" name="artist">
-      <Position>5</Position>
-      <DataType>varchar(100)|0</DataType>
+    <column id="28" parent="18" name="quantity">
+      <Position>8</Position>
+      <DataType>double|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="18" name="title">
+    <column id="29" parent="18" name="artist">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="30" parent="18" name="title">
       <Position>6</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="18" name="Date">
+    <column id="31" parent="18" name="Date">
       <Position>7</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
-    </column>
-    <column id="31" parent="18" name="consgrName">
-      <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
     </column>
     <key id="32" parent="18" name="PRIMARY">
       <ColNames>recordID</ColNames>

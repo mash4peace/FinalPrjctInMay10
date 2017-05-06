@@ -1,6 +1,7 @@
 package DB;
 
 import Constractor.Record;
+import StoreGUI.ConsgnmentShelf;
 import StoreGUI.SubWindow1;
 
 import java.sql.*;
@@ -164,7 +165,7 @@ public class DB {
     public void saveRecordInfoIntoRecordsTable(Record record) {
         try (Connection conn = DriverManager.getConnection(DB_CONNECTION_URL, USER, PASSWORDS)){
 
-            String addConsgnmtInfo = "INSERT INTO  records ( consgrID, consgrName, quantity, salePrx,  artist,   title  , date) VALUES (  ?,?, ?, ?, ?, ?, ?) ";
+            String addConsgnmtInfo = "INSERT INTO  records ( consgrID, consgrName, quantity, salePrx,  artist,   title  , Date ) VALUES (  ?,?, ?, ?, ?, ?, ?) ";
             PreparedStatement addConsgrDetails = conn.prepareStatement(addConsgnmtInfo);
 
 
@@ -180,6 +181,41 @@ public class DB {
             System.out.println("Added data into records table ");
             addConsgrDetails.close();
             conn.close();
+        }catch (SQLException sql){
+            sql.getCause();
+            sql.getErrorCode();
+            sql.printStackTrace();
+        }
+    }
+
+    public void getDataFromDB( ) {
+
+        try(Connection conn = DriverManager.getConnection(DB_CONNECTION_URL, USER, PASSWORDS)){
+            Statement statement = conn.createStatement();
+            String consmntRecord = "SELECT  recordID,  artist, title, quantity, salePrx,  Date FROM records ";
+            ResultSet rsAll = statement.executeQuery(consmntRecord);
+            while (rsAll.next()){
+                int recordID = rsAll.getInt("recordID");
+//                int consgrID = rsAll.getInt("consgrID");
+                String artistNAme = rsAll.getString("artist");
+                String title = rsAll.getString("title");
+                int quantity = rsAll.getInt("quantity");
+                double salePrx = rsAll.getDouble("salePrx");
+                Date date = rsAll.getDate("Date");
+                Record record = new Record(recordID,  artistNAme, title, quantity, salePrx, date);
+                LinkedList<Record> receivedData = new LinkedList<Record>();
+                receivedData.add(record);
+                ConsgnmentShelf.dumpData(receivedData);
+                System.out.println(record.toString());
+
+
+            }
+            //System.out.println("We sent ");
+            rsAll.close();
+            statement.close();
+            conn.close();
+
+
         }catch (SQLException sql){
             sql.getCause();
             sql.getErrorCode();

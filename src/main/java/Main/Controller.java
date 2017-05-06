@@ -23,7 +23,9 @@ public class Controller {
 
         return db.fetchAllConsgrNmeRecords();
     }
-
+    public static void loadDataFromDB( ) {
+        db.getDataFromDB();
+    }
 
 
 
@@ -43,11 +45,16 @@ public class Controller {
         db.saveRecordInfo( record);
     }
 
+
     public static void dumpIntoComBox() {
         db.getConsgrsFromData();
     }
 
+
+
     public static void saveRecordInfo(Record record) {
         db.saveRecordInfoIntoRecordsTable(record);
     }
+
+
 }

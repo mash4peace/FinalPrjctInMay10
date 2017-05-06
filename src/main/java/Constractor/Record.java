@@ -13,6 +13,12 @@ public class Record {
     String artist;
     String title;
 
+    public int getRecordID( ) {
+        return recordID;
+    }
+
+    int recordID;
+
     static  int consgrIDIncremet = 1;
 
     public int getConsgrID() {
@@ -59,6 +65,19 @@ public class Record {
 
     java.sql.Date smDate= new java.sql.Date(date.getTime());
 
+    //Uploading consignment into ConsgnmentShelf class
+   // recordID | artist    | title   | quantity | salePrx | Date
+    public Record(int recordID, String artist, String title, int quantity, double salePrx, java.sql.Date smDate){
+        this.quantity = quantity;
+        this.artist = artist;
+        this.title = title;
+        this.salePrx = salePrx;
+        this.smDate = smDate;
+        this.recordID = recordID;
+        //this.consgrID = consgrID;
+    }
+
+
 
     public Record(int consrID, String name,  int quantity, double salePrx, String artist, String title,  java.sql.Date smDate) {
         this.quantity = quantity;
@@ -82,6 +101,10 @@ public class Record {
 
     public Record(int consgrID, String artist, String title, double salePrx, java.sql.Date smDAte){
         this.consgrID = consgrID;
+        this.artist = artist;
+        this.title = title;
+        this.salePrx = salePrx;
+        this.smDate = smDAte;
 
     }
 
