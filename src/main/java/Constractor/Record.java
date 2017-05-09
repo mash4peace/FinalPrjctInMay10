@@ -12,6 +12,13 @@ public class Record {
     String consgr_Email;
     String artist;
     String title;
+    int saleID;
+
+    public java.sql.Date getSoldDate( ) {
+        return soldDate;
+    }
+
+    java.sql.Date soldDate;
 
     public int getRecordID( ) {
         return recordID;
@@ -27,6 +34,10 @@ public class Record {
 
     public String getConsgr_name() {
         return consgr_name;
+    }
+
+    public int getSaleID( ) {
+        return saleID;
     }
 
     public String getConsgr_phoneNumber() {
@@ -90,6 +101,7 @@ public class Record {
         consgrIDIncremet ++;
 
     }
+    //recordID, title, quantity, salePrx, date
     public Record(int quantity, double salePrx, String artist, String title,  java.sql.Date smDate){
         this.quantity = quantity;
         this.artist = artist;
@@ -107,21 +119,52 @@ public class Record {
         this.smDate = smDAte;
 
     }
+    // Sales JList loading data
+    //saleID | recordID | quantity | salePrx | soldDate
+
+    public Record(int saleID, int recordID ,int quantity,  double salePrx, java.sql.Date smDAte){
+    this.saleID = saleID;
+    this.recordID = recordID;
+    this.quantity = quantity;
+    this.salePrx = salePrx;
+    this.smDate = smDAte;
+
+
+    }
 
 
 
-    @Override
-    public String toString() {
-        return consgr_name;   }
 
     //Consignor's database constractor
+    @Override
+    public String toString( ) {
+        return
+            " Record ID= " + recordID +
+            ", Artist= " + artist + '\'' +
+            ", Song title= " + title + '\'' +
+            ", Quantity= " + quantity +
+            ", Sale price = " + salePrx +
+            ", Date  " + smDate;
+    }
+    public String printingConsignorName(){
+        return consgr_name;
+
+
+    }
+    public  String printOndatabase(){
+        return
+                recordID  + artist + title + quantity + salePrx + smDate;
+    }
+
+
+
     public Record(String name, String phone , String email){
         this.consgr_name = name;
         this.consgr_phoneNumber = phone;
         this.consgr_Email = email;
 
     }
-    public Record(int consgrID){
+    public Record(int recorID, int consgrID, double salePrx, java.sql.Date date){
         this.consgrID = consgrID;
     }
     // A combobox constractor
@@ -129,6 +172,8 @@ public class Record {
     public Record(String  consgName){
         this.consgr_name = consgName;
     }
+
+
 
 
 

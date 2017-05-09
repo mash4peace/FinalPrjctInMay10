@@ -22,73 +22,94 @@
     <schema id="16" parent="1" name="vet"/>
     <table id="17" parent="2" name="consignors"/>
     <table id="18" parent="2" name="records"/>
-    <column id="19" parent="17" name="consgrID">
+    <table id="19" parent="2" name="sales"/>
+    <column id="20" parent="17" name="consgrID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="20" parent="17" name="consgrName">
+    <column id="21" parent="17" name="consgrName">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="17" name="phone">
+    <column id="22" parent="17" name="phone">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="17" name="email">
+    <column id="23" parent="17" name="email">
       <Position>4</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="23" parent="17" name="PRIMARY">
+    <key id="24" parent="17" name="PRIMARY">
       <ColNames>consgrID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="24" parent="18" name="recordID">
+    <column id="25" parent="18" name="recordID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="25" parent="18" name="consgrID">
+    <column id="26" parent="18" name="salePrx">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="18" name="quantity">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="18" name="consgrName">
-      <Position>3</Position>
+    <column id="28" parent="18" name="artist">
+      <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="18" name="salePrx">
+    <column id="29" parent="18" name="title">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="30" parent="18" name="receivedDate">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="31" parent="18" name="PRIMARY">
+      <ColNames>recordID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="19" name="saleID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="19" name="recordID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="19" name="quantity">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="19" name="salePrx">
       <Position>4</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="18" name="quantity">
-      <Position>8</Position>
-      <DataType>double|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="29" parent="18" name="artist">
+    <column id="36" parent="19" name="soldDate">
       <Position>5</Position>
-      <DataType>varchar(100)|0</DataType>
-    </column>
-    <column id="30" parent="18" name="title">
-      <Position>6</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="31" parent="18" name="Date">
-      <Position>7</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="32" parent="18" name="PRIMARY">
-      <ColNames>recordID</ColNames>
+    <key id="37" parent="19" name="PRIMARY">
+      <ColNames>saleID</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

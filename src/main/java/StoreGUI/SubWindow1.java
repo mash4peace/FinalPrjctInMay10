@@ -61,7 +61,7 @@ public class SubWindow1 extends JFrame {
           // record = record.wrtingIntoComBoc(name);
 
             System.out.println(name);
-            consgrNamesListComboBox.addElement(String.format(record.toString(), record));
+            consgrNamesListComboBox.addElement(String.format(record.printingConsignorName(), record));
 
 
         }

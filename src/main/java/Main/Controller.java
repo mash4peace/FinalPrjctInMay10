@@ -57,4 +57,18 @@ public class Controller {
     }
 
 
+
+
+    public static void removeDataFromrecords(Record r) {
+        db.romveDataFromTableToanother(r);
+    }
+
+   
+/*
+    public static void loadSoldTables( ) {
+        db.sold_recordsUploading();
+    }
+    */
+
+
 }

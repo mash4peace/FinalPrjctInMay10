@@ -26,6 +26,7 @@ public class MainWindow  extends JFrame{
     private JPanel rootPanel;
     private JButton continueWithAnExistingButton;
     private JButton showConsignmentButton;
+    private JButton makePaymentButton;
     private Subwindow2  consgNameComboBox1 ;
 
     DefaultListModel <Record> csgmntCombListModel;
@@ -136,6 +137,16 @@ public class MainWindow  extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ConsgnmentShelf csmShef = new ConsgnmentShelf(MainWindow.this);
+            }
+        });
+        makePaymentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               // String name = SubWindow1.consgrNamesListComboBox.getSelectedItem().toString();
+
+              // SubWindow1 subWindow1 = new SubWindow1(MainWindow.this);
+              // String name = SubWindow1.consgrNamesListComboBox.getSelectedItem().toString();
+               // System.out.println(name);
             }
         });
     }
